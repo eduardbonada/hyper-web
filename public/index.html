@@ -1,0 +1,52 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="hyperModule">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Hyper App</title>
+
+    <!-- LOAD LIBRARIES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!-- load bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- load jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> <!-- load angular -->
+
+    <!-- LOAD HYPER ANGULAR CODE -->
+    <script src="core.js"></script>
+
+    <style>
+        html { overflow-y:scroll; }
+        body { padding-top:50px; }
+    </style>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="hyperController">
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="jumbotron text-center">
+            <h1>Hyped Bands <span class="label label-info">{{ hyped_bands.length }}</span></h1>
+        </div>
+
+        <!-- HYPED BANDS LIST -->
+        <div id="hyped-bands-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE BANDS IN $scope.hyped_bands -->
+                <div class="checkbox" ng-repeat="band in hyped_bands">
+                    <label>
+                        {{ band.bandName }} ({{ band.hypeScore }})
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
